@@ -3,54 +3,54 @@
   <mat-card>
   <h2>{{car.title | uppercase}} Details</h2>
   <div><span>id: </span>{{car.id}}</div>
-  <div>
+  <mat-card-content>
     <label for="car-name">Car name: </label>
-    <input id="car-name" [(ngModel)]="car.title" placeholder="name">
-  </div>
-  <div>
-    <label for="car-address">Car name: </label>
-    <input id="car-address" [(ngModel)]="car.address" placeholder="address">
-  </div>
-  <div>
-    <label for="car-model">Car name: </label>
-    <input id="car-model" [(ngModel)]="car.model" placeholder="model">
-  </div>
-  <div>
-    <label for="car-model-year">Car name: </label>
-    <input id="car-model-year" [(ngModel)]="car.model_year" placeholder="model_year">
-  </div>
-  <div>
-    <label for="car-issuance">Car name: </label>
-    <input id="car-issuance" [(ngModel)]="car.issuance" placeholder="issuance">
-  </div>
-  <div>
+    <input matInput id="car-name" [(ngModel)]="car.title" placeholder="name">
+  </mat-card-content>
+  <mat-card-content>
+    <label for="car-address">Car Address: </label>
+    <input matInput id="car-address" [(ngModel)]="car.address" placeholder="address">
+  </mat-card-content>
+  <mat-card-content>
+    <label for="car-model">Car Model: </label>
+    <input matInput id="car-model" [(ngModel)]="car.model" placeholder="model">
+  </mat-card-content>
+  <mat-card-content>
+    <label for="car-model-year">Car model year: </label>
+    <input matInput id="car-model-year" type="number" [(ngModel)]="car.model_year" placeholder="model_year">
+  </mat-card-content>
+  <mat-card-content>
+    <label for="car-issuance">Car issuance: </label>
+    <input matInput id="car-issuance" [(ngModel)]="car.issuance" placeholder="issuance">
+  </mat-card-content>
+  <mat-card-content>
     <label for="car-mileage">Car mileage: </label>
-    <input id="car-mileage" [(ngModel)]="car.mileage" placeholder="mileage">
-  </div>
-  <div>
+    <input matInput id="car-mileage" type="number" [(ngModel)]="car.mileage" placeholder="mileage">
+  </mat-card-content>
+  <mat-card-content>
     <label for="car-color">Car color: </label>
-    <input id="car-color" [(ngModel)]="car.color" placeholder="mileage">
-  </div>
-  <div>
+    <input matInput id="car-color" [(ngModel)]="car.color" placeholder="mileage">
+  </mat-card-content>
+  <mat-card-content>
     <label for="car-fuel">Car fuel: </label>
-    <input id="car-fuel" [(ngModel)]="car.fuel" placeholder="name">
-  </div>
-  <div>
+    <input matInput id="car-fuel" [(ngModel)]="car.fuel" placeholder="name">
+  </mat-card-content>
+  <mat-card-content>
     <label for="car-numbers_doors">Car Number of doors: </label>
-    <input id="car-numbers_doors" type="number" [(ngModel)]="car.numbers_doors" placeholder="name">
-  </div>
-  <div>
+    <input matInput id="car-numbers_doors" type="number" [(ngModel)]="car.numbers_doors" placeholder="name">
+  </mat-card-content>
+  <mat-card-content>
     <label for="car-horse_power">Car horsepower: </label>
-    <input id="car-horse_power" [(ngModel)]="car.horse_power" placeholder="name">
-  </div>
-  <div>
+    <input matInput id="car-horse_power" type="number" [(ngModel)]="car.horse_power" placeholder="name">
+  </mat-card-content>
+  <mat-card-content>
     <label for="car-price">Car price: </label>
-    <input id="car-price" [(ngModel)]="car.price" placeholder="name">
-  </div>
-  <div>
+    <input matInput id="car-price" type="number" [(ngModel)]="car.price" placeholder="name">
+  </mat-card-content>
+  <mat-card-content>
     <label for="car-sold">Car status: </label>
-    <input id="car-sold" [(ngModel)]="car.sold" placeholder="name">
-  </div>
+    <input matInput id="car-sold" [(ngModel)]="car.sold" placeholder="name">
+  </mat-card-content>
   </mat-card>
 
 </div>
