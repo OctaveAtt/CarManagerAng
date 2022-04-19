@@ -1,0 +1,14 @@
+<mat-card class="example-card">
+  <a routerLink="/detail/{{car.id}}"><img mat-card-image src="{{car.pictures[0]}}" alt="{{car.title}}"/></a>
+    <mat-card-subtitle>{{car.title}}</mat-card-subtitle>
+  <mat-card-content>address :{{car.address}}</mat-card-content>
+  <mat-card-content>model :{{car.model}}</mat-card-content>
+  <mat-card-content>date: {{car.issuance}}</mat-card-content>
+  <mat-card-content>Price: {{car.price}} €</mat-card-content>
+  <mat-card-content><span *ngIf="car.sold ===false;else na"> Disponible</span></mat-card-content>
+  <mat-card-content>
+  <button mat-raised-button (click)="delete(car)" color="primary"> Supprimer</button>
+  </mat-card-content>
+</mat-card>
+
+<ng-template #na> VENDU</ng-template>

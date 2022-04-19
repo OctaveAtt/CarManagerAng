@@ -1,0 +1,85 @@
+
+<mat-card class="form-card">
+<form method="post" (ngSubmit)="createCar()" [formGroup]="newCar">
+  <mat-card-content>
+  <mat-form-field  appearance="fill">
+    <mat-label>Title</mat-label>
+    <input matInput formControlName="title" placeholder="Name">
+  </mat-form-field>
+  </mat-card-content>
+  <mat-card-content>
+  <mat-form-field appearance="fill">
+    <mat-label>Address</mat-label>
+    <input matInput formControlName="address">
+  </mat-form-field>
+  </mat-card-content>
+  <mat-card-content>
+  <mat-form-field appearance="fill">
+    <mat-label>Model</mat-label>
+    <input  formControlName="model" matInput>
+  </mat-form-field>
+  </mat-card-content>
+  <mat-card-content>
+  <mat-form-field appearance="fill">
+    <mat-label>Model Year</mat-label>
+    <input  formControlName="model_year" matInput>
+  </mat-form-field>
+  </mat-card-content>
+  <mat-card-content>
+  <mat-form-field appearance="fill">
+    <mat-label>Issuance</mat-label>
+    <input  formControlName="issuance" matInput>
+  </mat-form-field>
+  </mat-card-content>
+  <mat-card-content>
+  <mat-form-field appearance="fill">
+    <mat-label>Mileage</mat-label>
+    <input  formControlName="mileage" matInput>
+  </mat-form-field>
+  </mat-card-content>
+  <mat-card-content>
+  <mat-form-field appearance="fill">
+    <mat-label>Fuel</mat-label>
+    <input  formControlName="fuel" matInput>
+  </mat-form-field>
+  </mat-card-content>
+  <mat-card-content>
+  <mat-form-field appearance="fill">
+    <mat-label>Color</mat-label>
+    <input  formControlName="color" matInput>
+  </mat-form-field>
+  </mat-card-content>
+  <mat-card-content>
+  <mat-form-field appearance="fill">
+    <mat-label>Number of Doors</mat-label>
+    <input  formControlName="number_doors" matInput>
+  </mat-form-field>
+  </mat-card-content>
+  <mat-card-content>
+  <mat-form-field appearance="fill">
+    <mat-label>Horse Power</mat-label>
+    <input formControlName="horse_power" matInput>
+  </mat-form-field>
+  </mat-card-content>
+  <mat-card-content>
+  <mat-form-field appearance="fill">
+    <mat-label>Price</mat-label>
+    <input formControlName="price" matInput>
+  </mat-form-field>
+  </mat-card-content>
+  <mat-card-content>
+  <mat-form-field appearance="fill">
+    <mat-label>Pictures</mat-label>
+    <input formControlName="pictures" matInput>
+  </mat-form-field>
+  </mat-card-content>
+  <mat-card-content>
+  <mat-form-field appearance="fill">
+    <mat-label>Sold</mat-label>
+    <input formControlName="sold" matInput>
+  </mat-form-field>
+  </mat-card-content>
+  <button type="submit" color="primary"  mat-button>Envoyer</button>
+</form>
+</mat-card>
+

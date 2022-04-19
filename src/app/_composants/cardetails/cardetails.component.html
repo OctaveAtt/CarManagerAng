@@ -1,0 +1,58 @@
+<div *ngIf="car !=null">
+
+  <mat-card>
+  <h2>{{car.title | uppercase}} Details</h2>
+  <div><span>id: </span>{{car.id}}</div>
+  <div>
+    <label for="car-name">Car name: </label>
+    <input id="car-name" [(ngModel)]="car.title" placeholder="name">
+  </div>
+  <div>
+    <label for="car-address">Car name: </label>
+    <input id="car-address" [(ngModel)]="car.address" placeholder="address">
+  </div>
+  <div>
+    <label for="car-model">Car name: </label>
+    <input id="car-model" [(ngModel)]="car.model" placeholder="model">
+  </div>
+  <div>
+    <label for="car-model-year">Car name: </label>
+    <input id="car-model-year" [(ngModel)]="car.model_year" placeholder="model_year">
+  </div>
+  <div>
+    <label for="car-issuance">Car name: </label>
+    <input id="car-issuance" [(ngModel)]="car.issuance" placeholder="issuance">
+  </div>
+  <div>
+    <label for="car-mileage">Car mileage: </label>
+    <input id="car-mileage" [(ngModel)]="car.mileage" placeholder="mileage">
+  </div>
+  <div>
+    <label for="car-color">Car color: </label>
+    <input id="car-color" [(ngModel)]="car.color" placeholder="mileage">
+  </div>
+  <div>
+    <label for="car-fuel">Car fuel: </label>
+    <input id="car-fuel" [(ngModel)]="car.fuel" placeholder="name">
+  </div>
+  <div>
+    <label for="car-numbers_doors">Car Number of doors: </label>
+    <input id="car-numbers_doors" type="number" [(ngModel)]="car.numbers_doors" placeholder="name">
+  </div>
+  <div>
+    <label for="car-horse_power">Car horsepower: </label>
+    <input id="car-horse_power" [(ngModel)]="car.horse_power" placeholder="name">
+  </div>
+  <div>
+    <label for="car-price">Car price: </label>
+    <input id="car-price" [(ngModel)]="car.price" placeholder="name">
+  </div>
+  <div>
+    <label for="car-sold">Car status: </label>
+    <input id="car-sold" [(ngModel)]="car.sold" placeholder="name">
+  </div>
+  </mat-card>
+
+</div>
+<button type="button" (click)="save()">save</button>
+<button type="button" (click)="goBack()">go back</button>

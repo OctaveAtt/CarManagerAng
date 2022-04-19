@@ -1,0 +1,11 @@
+<mat-grid-list [cols]="3">
+  <mat-grid-tile *ngFor="let car of cars|sortByCarsDate:sortDateByOrder|sortByCarPrice:sortByOrder">
+    <app-car [carParam]="car"></app-car>
+  </mat-grid-tile>
+</mat-grid-list>
+
+<mat-button-toggle (click)="sortOn()">Prix {{sortByOrder ==='ASC' ?"Croissant" : "Decroissant"}}</mat-button-toggle>
+<mat-button-toggle (click)="sortDate()">Date {{sortDateByOrder ==='ASC' ?"Croissant" : "Decroissant"}}</mat-button-toggle>
+
+
+<app-carsearch></app-carsearch>
