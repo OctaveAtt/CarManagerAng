@@ -1,9 +1,13 @@
 <div id="search-component">
 
-  <mat-form-field>
-    <mat-label>Car Search</mat-label>
-    <input matInput #searchBox id="search-box" (input)="searchCar(searchBox.value)" />
-  </mat-form-field>
+
+  <mat-label>Car Search</mat-label>
+  <input matInput #searchBox id="search-box" (input)="search(searchBox.value)" />
+  <mat-label>Car Upperprice value</mat-label>
+  <input matInput #uppervalue id="lower-bound"  (input)="setBound(lowervalue.value, uppervalue.value)" />
+  <mat-label>Car Lowerprice value</mat-label>
+  <input matInput #lowervalue id="upper-bound"  (input)="setBound(lowervalue.value,uppervalue.value)" />
+
 
   <mat-list class="search-result">
     <mat-list-item *ngFor="let car of cars$ | async" >

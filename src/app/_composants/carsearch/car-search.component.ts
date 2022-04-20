@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {debounceTime, distinctUntilChanged, Observable, of, Subject, switchMap} from "rxjs";
+import {debounceTime, distinctUntilChanged, map, Observable, of, Subject, switchMap} from "rxjs";
 import {Car} from "../../car";
 import {CarsService} from "../../_service/cars.service";
 import {CarsComponent} from "../cars/cars.component";
@@ -14,10 +14,28 @@ export class CarSearchComponent implements OnInit {
   cars$!: Observable<Car[]>;
   private searchTerms = new Subject<string>();
 
+  lowerLimit:number = 0;
+  upperLimit:number = 100000000;
+
   cars:Car[] = this.carsComponent.cars
 
 
   constructor(private carsService: CarsService,private carsComponent:CarsComponent) {}
+
+
+  search(term: string): void {
+    this.searchTerms.next(term);
+  }
+
+
+  setBound(low:string,upper:string ){
+    console.log(low+"/"+upper)
+    this.lowerLimit = low ==="" ? 0 : parseInt(low);
+    this.upperLimit = upper ==="" ?0 :parseInt(upper);
+  }
+
+
+
 
   // Push a search term into the observable stream.
   ngOnInit(): void {
@@ -29,18 +47,16 @@ export class CarSearchComponent implements OnInit {
       distinctUntilChanged(),
 
       // switch to new search observable each time the term changes
-      switchMap((term: string) => this.searchCar(term)),
+      switchMap((term: string) => this.carsService.searchCar(term)),
+      map(places => {
+        // Here goes some condition, apply it to your use case, the condition only will return when condition matches
+        console.log(this.upperLimit+"//"+this.lowerLimit);
+        return places.filter(place => place.price>this.lowerLimit && place.price<this.upperLimit);
+      })
     );
   }
 
-  searchCar(pokemonName: string):Observable<Car[]> {
-    if (pokemonName) {
-      const regex = new RegExp(pokemonName, 'gi');
-      this.cars$ =  of(this.cars.filter(p => p.title.match(regex)));
-    }
-      return this.cars$;
 
-  }
 
 
 }

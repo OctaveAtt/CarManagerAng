@@ -58,7 +58,7 @@ export class CarsService {
       // if not search term, return empty hero array.
       return of([]);
     }
-    return this.http.get<Car[]>(`${CAR_URL}/?name=${term}`).pipe(
+    return this.http.get<Car[]>(`${CAR_URL}/?title_like=${term}`).pipe(
       tap(x => x.length ?
         this.log(`found heroes matching "${term}"`) :
         this.log(`no heroes matching "${term}"`)),
