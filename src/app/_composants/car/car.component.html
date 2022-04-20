@@ -4,7 +4,7 @@
   <mat-card-content>address :{{car.address}}</mat-card-content>
   <mat-card-content>model :{{car.model}}</mat-card-content>
   <mat-card-content>date: {{car.issuance}}</mat-card-content>
-  <mat-card-content>Price: {{car.price}} €</mat-card-content>
+  <mat-card-content>Price:<span *ngIf="car.price else nd"> {{car.price}} € </span></mat-card-content>
   <mat-card-content><span *ngIf="car.sold ===false;else na"> Disponible</span></mat-card-content>
   <mat-card-content>
   <button mat-raised-button (click)="delete(car)" color="primary"> Supprimer</button>
@@ -12,3 +12,4 @@
 </mat-card>
 
 <ng-template #na> VENDU</ng-template>
+<ng-template #nd> Indéfini</ng-template>

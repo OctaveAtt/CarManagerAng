@@ -1,8 +1,9 @@
 <div id="search-component">
 
-  <mat-label for="search-box">Hero Search</mat-label>
-  <input matInput #searchBox id="search-box" (input)="searchCar(searchBox.value)" />
-
+  <mat-form-field>
+    <mat-label>Car Search</mat-label>
+    <input matInput #searchBox id="search-box" (input)="searchCar(searchBox.value)" />
+  </mat-form-field>
 
   <mat-list class="search-result">
     <mat-list-item *ngFor="let car of cars$ | async" >

@@ -2,6 +2,15 @@
 
   <mat-card>
   <h2>{{car.title | uppercase}} Details</h2>
+    <mat-grid-list cols="4" rowHeight="400px">
+      <mat-grid-tile
+        *ngFor="let tile of car.pictures"
+        [colspan]="2"
+        [rowspan]="1">
+        <img mat-card-image src="{{tile}}" alt="{{car.title}}"/>
+      </mat-grid-tile>
+
+    </mat-grid-list>
   <div><span>id: </span>{{car.id}}</div>
   <mat-card-content>
     <label for="car-name">Car name: </label>
@@ -51,8 +60,10 @@
     <label for="car-sold">Car status: </label>
     <input matInput id="car-sold" [(ngModel)]="car.sold" placeholder="name">
   </mat-card-content>
+    <button mat-raised-button color="primary" type="button" (click)="save()">save</button>
+    <button mat-raised-button color="primary" type="button" (click)="goBack()">go back</button>
   </mat-card>
 
+
 </div>
-<button type="button" (click)="save()">save</button>
-<button type="button" (click)="goBack()">go back</button>
+
